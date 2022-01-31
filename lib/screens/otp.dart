@@ -1,4 +1,4 @@
-import 'package:authentication_app/screens/home.dart';
+import 'package:authentication_app/screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +74,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       Fluttertoast.showToast(msg: "Phone no. verified");
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()),
+                          MaterialPageRoute(builder: (context) => Login()),
                               (route) => false);
                     }
                   });
@@ -106,7 +106,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     child: Text('Close'),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Home()));
+                          MaterialPageRoute(builder: (context) => const Login()));
                     }),
               ],
             );

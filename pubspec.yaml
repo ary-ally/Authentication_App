@@ -70,6 +70,7 @@ flutter:
    - images/bgscreen.png
    - images/logo.png
    - images/bg1.png
+   - images/logo1.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

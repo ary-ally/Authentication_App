@@ -226,7 +226,7 @@ class _RegisterState extends State<Register> {
         ),
         child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(35.0),
+              padding: const EdgeInsets.only(left: 35,right: 35,top: 0),
               child: Form(
                 key:_formkey ,
                 child: Column(
