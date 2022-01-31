@@ -115,7 +115,8 @@ class _HomeState extends State<Home> {
                 style: TextStyle(fontSize: 20, color: Color(0xFF6B75CE)),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Contactus()));
               },
             ),
             ListTile(
