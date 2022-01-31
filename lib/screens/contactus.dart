@@ -41,78 +41,72 @@ class Contactus extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              TextButton(
-                onPressed: () {},
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.email_rounded,
-                          color: Colors.red.shade400,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Aryan Sharma",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20)),
-                      ],
-                    ),
+              Card(
+                color: Colors.purpleAccent.shade100,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.email_rounded,
+                        color: Colors.red.shade400,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Aryan Sharma",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20)),
+                    ],
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.email_rounded,
-                          color: Colors.red.shade400,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Abhinav Gautam",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20)),
-                      ],
-                    ),
+              Card(
+                color: Colors.purpleAccent.shade100,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.email_rounded,
+                        color: Colors.red.shade400,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Abhinav Gautam",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20)),
+                    ],
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(
-                          Icons.email_rounded,
-                          color: Colors.red.shade400,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Anvay Raj",
-                            style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20)),
-                      ],
-                    ),
+              Card(
+                color: Colors.purpleAccent.shade100,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.email_rounded,
+                        color: Colors.red.shade400,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Anvay Raj",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20)),
+                    ],
                   ),
                 ),
               ),
