@@ -2,7 +2,6 @@ import 'package:authentication_app/model/user_model.dart';
 import 'package:authentication_app/screens/about.dart';
 import 'package:authentication_app/screens/emailedit.dart';
 import 'package:authentication_app/screens/login.dart';
-import 'package:authentication_app/screens/password.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
+
   @override
   void initState() {
     super.initState();
@@ -33,330 +33,113 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Home'),
-          centerTitle: true,
-          backgroundColor: Colors.purpleAccent,
-        ),
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/bgscreen.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset("images/logo1.png", fit: BoxFit.contain),
-                  ),
-                ),
-                Expanded(
-                  flex: 5,
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Expanded(
-                            child: Center(
-                              child: Text(
-                                "Welcome, ${loggedInUser.name} !",
-                                style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 5,
-                            child: Card(
-                              color: Colors.deepPurple.shade200,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.all(5.0),
-                                      child: Center(
-                                        child: Text("Entered Details",
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 20)),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Username : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.name}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Email : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.email}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "RollNo. : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.roll}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Gender : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.gender}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Year : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.year}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Branch : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.branch}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 3.0, horizontal: 5.0),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "Address : ",
-                                              style: TextStyle(
-                                                fontFamily: 'Ubuntu',
-                                              ),
-                                            ),
-                                            Text(
-                                              "${loggedInUser.add}",
-                                              style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontFamily: 'Ubuntu',
-                                                  color:
-                                                      Colors.deepPurpleAccent),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    ActionChip(
-                                        backgroundColor: Colors.purpleAccent,
-                                        label: Text(
-                                          "Logout",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 20,
-                                            fontFamily: 'Ubuntu',
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          logout(context);
-                                        }),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
+        centerTitle: true,
+        backgroundColor: Colors.purpleAccent,
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/bgscreen.png"),
+            fit: BoxFit.cover,
           ),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.white38,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent.shade100,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Hello, ${loggedInUser.name}!",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
-                  ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 150,
+                child: Image.asset("images/logo1.png", fit: BoxFit.contain),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Text(
+                  "Welcome to Team CSI",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               ),
-              ListTile(
-                tileColor: Colors.purple,
-                title: const Text(
-                  'Edit login info',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Password()));
-                },
+              SizedBox(
+                height: 10,
               ),
-              ListTile(
-                tileColor: Colors.purple,
-                title: const Text(
-                  'About Us',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const About()));
-                },
-              ),
-              ListTile(
-                tileColor: Colors.purple,
-                title: const Text(
-                  'Contact Us',
+              Text("${loggedInUser.name}",
                   style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Contactus()));
-                },
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20)),
+              Text("${loggedInUser.email}",
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20)),
+              SizedBox(
+                height: 15,
               ),
-              Container(
-                  margin: EdgeInsets.all(10),
-                  height: 100,
-                  child: Image.asset("images/logo1.png", fit: BoxFit.contain)),
+              ActionChip(
+                  label: Text("Logout"),
+                  onPressed: () {
+                    logout(context);
+                  }),
             ],
           ),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color(0xFFBEC3FC),
+                ),
+                child: Text(
+                  'Team CSI Page',
+                  style: TextStyle(fontSize: 30, color: Colors.purpleAccent),
+                )),
+            ListTile(
+              title: const Text(
+                'Edit E.mail Address',
+                style: TextStyle(fontSize: 20, color: Color(0xFF6B75CE)),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Emailedit()));
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Contact Us',
+                style: TextStyle(fontSize: 20, color: Color(0xFF6B75CE)),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Contactus()));
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'About',
+                style: TextStyle(fontSize: 20, color: Color(0xFF6B75CE)),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const About()));
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Contact Us',
+                style: TextStyle(fontSize: 20, color: Color(0xFF6B75CE)),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Contactus()));
+              },
+            ),
+          ],
         ),
       ),
     );
