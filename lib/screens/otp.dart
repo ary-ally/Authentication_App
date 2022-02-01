@@ -37,24 +37,19 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       key: _scaffoldkey,
       appBar: AppBar(
         title: Text('OTP Verification'),
-        centerTitle: true,
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.teal[800],
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 120),
-            child: Container(
-              margin: EdgeInsets.only(top: 40),
-              child: Center(
-                child: Text(
-                  'Verify ${widget.phone}',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,color: Colors.white),
-                ),
+          Container(
+            margin: EdgeInsets.only(top: 40),
+            child: Center(
+              child: Text(
+                'Verify ${widget.phone}',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
               ),
             ),
           ),
@@ -104,8 +99,8 @@ class _OTPScreenState extends State<OTPScreen> {
               .signInWithCredential(credential)
               .then((value) async {
             CupertinoAlertDialog(
-              title: const Text("Phone Authentication"),
-              content: const Text("Phone Number verified!!!"),
+              title: Text("Phone Authentication"),
+              content: Text("Phone Number verified!!!"),
               actions: [
                 CupertinoButton(
                     child: Text('Close'),
@@ -130,7 +125,7 @@ class _OTPScreenState extends State<OTPScreen> {
             _verificationCode = verificationID;
           });
         },
-        timeout: const Duration(seconds: 120));
+        timeout: Duration(seconds: 120));
   }
 
 
