@@ -6,7 +6,11 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('About'),centerTitle: true,backgroundColor:Colors.purpleAccent,),
+      appBar: AppBar(
+        title: const Text('About'),
+        centerTitle: true,
+        backgroundColor: Colors.purpleAccent,
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -19,35 +23,96 @@ class About extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
-                height: 150,
+              Expanded(
                 child: Image.asset("images/logo1.png", fit: BoxFit.contain),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Text(
-                  "Flutter Authentication App Made by :",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text("Aryan Sharma",
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,fontSize: 20
-                  )),
-              Text("Abhinav Gautam",
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,fontSize: 20
-                  )),
-              Text("Anvay Raj",
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,fontSize: 20
-                  )),
+              Expanded(
+                  flex: 3,
+                  child: Card(
+                    color: Colors.transparent,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              "Contributing Developers :",
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                            Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('images/pp1.jpg'),
+                                      radius: 40,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    const Text("Aryan Sharma",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 20)),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 40,
+                                      backgroundImage:
+                                          AssetImage('images/pp.jpg'),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    const Text("Abhinav Gautam",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 20)),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('images/pp3.jpg'),
+                                      radius: 40,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    const Text("Anvay Raj",
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 20)),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ))
             ],
           ),
         ),

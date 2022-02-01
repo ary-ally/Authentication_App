@@ -11,7 +11,6 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _navigatetologin();
   }
@@ -21,7 +20,6 @@ class _SplashState extends State<Splash> {
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const Login()));
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,22 +33,36 @@ class _SplashState extends State<Splash> {
           ),
         ),
         child: Center(
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 300),
-              child: Image.asset('images/logo.png',height: 200,width: 200,),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 100,left: 80),
-              child: Row(children: const [
-                Text('Authentication App',
-                  style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),)
-          ],),
-            )
-      ],
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 300),
+                child: Image.asset(
+                  'images/logo.png',
+                  height: 200,
+                  width: 200,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 100, left: 80),
+                child: Row(
+                  children: const [
+                    Text(
+                      'Authentication App',
+                      style: TextStyle(
+                        fontFamily: 'Ubuntu',
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
-        ),),
     );
   }
 }
-

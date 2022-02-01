@@ -49,38 +49,41 @@ class Contactus extends StatelessWidget {
                   color: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("Aryan Sharma",
-                                style: TextStyle(
-                                    color: Colors.black38,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 22)),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.email_rounded,
-                              color: Colors.red.shade400,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text("Aryansharma4003@gmail.com",
-                                style: TextStyle(
-                                    color: Colors.purpleAccent,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 20)),
-                          ],
-                        )
-                      ],
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text("Aryan Sharma",
+                                  style: TextStyle(
+                                      color: Colors.black38,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 22)),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.email_rounded,
+                                color: Colors.red.shade400,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text("Aryansharma4003@gmail.com",
+                                  style: TextStyle(
+                                      color: Colors.purpleAccent,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20)),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
